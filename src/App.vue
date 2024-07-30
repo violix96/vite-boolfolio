@@ -38,14 +38,23 @@ export default {
 
 <template>
   <div class="container">
-    <header>header</header>
-
-    <main>
-      <h1>{{ title }}</h1>
-    </main>
-
-    <footer>footer</footer>
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="mb-5">{{ title }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4" v-for="(project, index) in projects" :key="project.id">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
 
 <style lang="scss" scoped></style>
